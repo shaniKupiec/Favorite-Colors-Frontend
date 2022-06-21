@@ -10,5 +10,8 @@
 @import 'basics/helpers';
 
 //VIEWS
+@import 'views/app';
 
 // COMPONENTS
+@import 'component/color-list';
+@import 'component/color-preview';
