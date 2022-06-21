@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { ColorList } from "./components/ColorList";
 import { Data } from "./models/data.models";
+import axios from "axios";
 
-function App() {
+export const App = () => {
   const [dataBase, setDataBase] = useState<Data[]>([]);
 
   useEffect(() => {
@@ -10,26 +11,17 @@ function App() {
   }, []);
 
   const loadData = async () => {
-    const newData: Data[] = [
-      {
-        color: "red",
-        votes: 20,
-      },
-      {
-        color: "green",
-        votes: 100,
-      },
-      {
-        color: "blue",
-        votes: 5,
-      },
-    ];
-    setDataBase(newData);
+    await axios
+      .get("/colors")
+      .then((res) => res.data)
+      .then((colors) => setDataBase(colors));
   };
 
-  const onVote = (color: string) => {
-    setDataBase((dataBase) =>
-      dataBase.map((d) => {
+  const onVote = async (color: string) => {
+    await axios.put(`/colors/${color}`);
+
+    setDataBase((dataBase: any[]) =>
+      dataBase.map((d: { color: string; votes: number }) => {
         if (d.color === color) d.votes++;
         return d;
       })
@@ -42,6 +34,4 @@ function App() {
       <ColorList dataBase={dataBase} onVote={onVote} />
     </section>
   );
-}
-
-export default App;
+};
