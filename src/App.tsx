@@ -17,12 +17,12 @@ export const App = () => {
       .then((colors) => setDataBase(colors));
   };
 
-  const onVote = async (color: string) => {
-    await axios.put(`/colors/${color}`);
+  const onVote = async (id: string) => {
+    await axios.put(`/colors/${id}`);
 
-    setDataBase((dataBase: any[]) =>
-      dataBase.map((d: { color: string; votes: number }) => {
-        if (d.color === color) d.votes++;
+    setDataBase((dataBase: Data[]) =>
+      dataBase.map((d: Data) => {
+        if (d._id === id) d.votes++;
         return d;
       })
     );

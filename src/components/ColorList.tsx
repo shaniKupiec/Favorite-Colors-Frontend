@@ -1,7 +1,7 @@
 import { Data } from "../models/data.models";
 import { ColorPreview } from "./ColorPreview";
 
-export const ColorList = ({ dataBase, onVote }: any) => {
+export const ColorList = ({ dataBase, onVote }: { dataBase: Data[]; onVote: Function }) => {
   const votes = dataBase.map((data: Data) => {
     return data.votes;
   });
@@ -10,7 +10,7 @@ export const ColorList = ({ dataBase, onVote }: any) => {
   return (
     <section className="color-list">
       {dataBase.map((data: Data) => (
-        <ColorPreview key={data.color} color={data.color} votes={data.votes} onVote={onVote} maxWidth={maxWidth} />
+        <ColorPreview key={data._id} data={data} onVote={onVote} maxWidth={maxWidth} />
       ))}
     </section>
   );
