@@ -2,7 +2,7 @@
 # Favorite Colors Frontend
 
 Favorite Colors
-Frontend code: https://github.com/shaniKupiec/Favorite-Colors-Backend
+Backend code: https://github.com/shaniKupiec/Favorite-Colors-Backend
 
 ## Tech
 - React typescript
