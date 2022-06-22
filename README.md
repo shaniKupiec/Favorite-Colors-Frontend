@@ -10,6 +10,8 @@ Backend code: https://github.com/shaniKupiec/Favorite-Colors-Backend
 
 ## Features
 - Allows to increase  vote by clicking
+- Allows adding new color
+- Allows removing existing color
 
 
 ## Installation
