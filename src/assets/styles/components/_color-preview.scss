@@ -9,4 +9,12 @@
         position: absolute;
         bottom: 0;
     }
+
+    &__delete{
+        @include btn();
+        position: absolute;
+        right: 0;
+        margin: 5px;
+        padding: 5px 7px;
+    }
 }

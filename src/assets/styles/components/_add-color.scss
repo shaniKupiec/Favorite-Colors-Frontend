@@ -1,0 +1,12 @@
+.add-color-cmp{
+    margin: 20px;
+
+    &__form{
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.btn{
+    @include btn();
+}

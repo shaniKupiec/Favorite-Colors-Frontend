@@ -6,29 +6,12 @@
 }
 
 @mixin btn() {
-    background-color: $pClr1;
-    border: 0;
-    padding: rem(15px);
-    color: $pClr4;
-    width: rem(280px);
-    font-family: poppins-semiBold;
+    background-color: rgb(229, 229, 229);
+    border: 1px solid rgb(85, 85, 85);
+    padding: 10px 15px;
     text-transform: capitalize;
-    
-    &:hover{
-        background-color: darken($pClr1, 5%);
-    }
-    
-    &.disable{
-        cursor: not-allowed;
-        background-color: darken($pClr1, 10%);
-    }
-}
+    border-radius: 2px;
 
-@mixin input() {
-    height: rem(46px);
-    border: 0;
-    border-radius: 25px;
-    width: 100%;
     &:focus-visible {
         outline: 0;
     }
