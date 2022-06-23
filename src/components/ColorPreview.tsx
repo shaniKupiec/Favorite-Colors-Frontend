@@ -5,7 +5,7 @@ export const ColorPreview = ({data, maxWidth, onVote, onRemoveColor}: { data: Da
 
   const barWidth = data.votes / maxWidth * 200
 
-  const removeColor = (ev: any) => {
+  const removeColor = (ev: React.FormEvent<EventTarget>) => {
     ev.stopPropagation()
     onRemoveColor(data._id)
   }
